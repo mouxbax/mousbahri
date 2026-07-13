@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mous Bahri موس بحري | Official Website</title>
+<meta name="description" content="Mous Bahri is a Lebanese indie queer contemporary singer, songwriter and producer based in Paris. Oriental, pop and avant-garde electronic music in Arabic. Listen to the latest single Douri Feena." />
+<link rel="canonical" href="https://www.mousbahri.com/" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Mous Bahri موس بحري | Official Website" />
+<meta property="og:description" content="Lebanese indie queer contemporary singer. Oriental x Pop x Avant-garde Electronic. New single Douri Feena out now." />
+<meta property="og:url" content="https://www.mousbahri.com/" />
+<meta name="theme-color" content="#000000" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Mous Bahri",
+  "alternateName": "موس بحري",
+  "url": "https://www.mousbahri.com/",
+  "genre": ["Indie", "Electronic", "Arabic Pop", "Avant-garde"],
+  "foundingLocation": "Beirut, Lebanon",
+  "location": "Paris, France",
+  "description": "Mous Bahri is a Lebanese indie queer contemporary singer who writes, composes and produces his own music, bridging Oriental, Pop and Avant-garde Electronic.",
+  "sameAs": [
+    "https://open.spotify.com/artist/4ldLwo9ZUuI6DxmmSuGg1U",
+    "https://music.apple.com/fr/artist/mous-bahri/1471189161",
+    "https://play.anghami.com/artist/4867210",
+    "https://mousbahri.bandcamp.com",
+    "https://soundcloud.com/user-459890580",
+    "https://www.youtube.com/c/MousBahri",
+    "https://twitter.com/MousBahri",
+    "https://www.facebook.com/bahrimous",
+    "https://linktr.ee/mousbahri"
+  ]
+}
+</script>
+<style>
+  :root{
+    --red:#961B1E;
+    --red-bright:#c42328;
+    --red-dim:rgba(150,27,30,.35);
+    --black:#000;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    color:var(--red);
+    font-family:"Courier Prime","Courier New",monospace;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--red);color:var(--black)}
+
+  /* scanlines + noise */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+    background:repeating-linear-gradient(0deg,rgba(150,27,30,.03) 0 1px,transparent 1px 3px);
+  }
+  .noise{
+    position:fixed;inset:0;pointer-events:none;z-index:49;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  a{color:var(--red);text-decoration:none}
+  section{min-height:60vh;padding:14vh 8vw;position:relative}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2.4rem}
+  .ar-line{
+    direction:rtl;font-size:clamp(1.6rem,5vw,3.4rem);letter-spacing:.08em;min-height:1.4em;
+  }
+  .cursor{display:inline-block;width:.55em;height:1.1em;background:var(--red);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;margin-right:.15em}
+  @keyframes blink{50%{opacity:0}}
+
+  .name{
+    font-size:clamp(.85rem,1.6vw,1.1rem);letter-spacing:.9em;text-transform:uppercase;padding-left:.9em;
+    position:relative;
+  }
+  .name .glitch{position:relative;display:inline-block}
+  .name .glitch::before,.name .glitch::after{
+    content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden;opacity:0;
+  }
+  .name .glitch::before{color:var(--red-bright);animation:gl 6s infinite}
+  .name .glitch::after{color:#3a0b0c;animation:gl 6s 3s infinite}
+  @keyframes gl{
+    0%,93%,100%{opacity:0;transform:none;clip-path:inset(0 0 0 0)}
+    94%{opacity:.8;transform:translate(-3px,1px);clip-path:inset(10% 0 55% 0)}
+    96%{opacity:.8;transform:translate(3px,-1px);clip-path:inset(60% 0 10% 0)}
+    98%{opacity:.6;transform:translate(-2px,0);clip-path:inset(30% 0 40% 0)}
+  }
+
+  .btn{
+    display:inline-block;border:1px solid var(--red);padding:.85rem 2.6rem;
+    letter-spacing:.12em;font-size:1.05rem;cursor:pointer;background:transparent;color:var(--red);
+    transition:all .25s;font-family:inherit;
+  }
+  .btn:hover{background:var(--red);color:var(--black);box-shadow:0 0 24px var(--red-dim)}
+
+  .scroll-hint{position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);font-size:.75rem;letter-spacing:.4em;opacity:.5;animation:blink 2.5s infinite}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{border-top:1px solid var(--red-dim);border-bottom:1px solid var(--red-dim);overflow:hidden;white-space:nowrap;padding:.7rem 0;font-size:.85rem;letter-spacing:.25em}
+  .marquee span{display:inline-block;animation:mq 40s linear infinite}
+  @keyframes mq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION TITLES ---------- */
+  h2{
+    font-size:.8rem;letter-spacing:.7em;text-transform:uppercase;margin-bottom:3.2rem;opacity:.85;font-weight:400;
+  }
+  h2::before{content:"// "}
+
+  /* ---------- LATEST ---------- */
+  .latest{display:flex;flex-wrap:wrap;gap:3rem;align-items:center;justify-content:center}
+  .latest-info{max-width:26rem}
+  .latest-info .rel-title{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.6rem}
+  .latest-info .rel-title .ar{display:block;direction:rtl;font-size:.55em;opacity:.8;margin-top:.3rem}
+  .latest-info p{font-size:.9rem;line-height:1.7;opacity:.8;margin:1.2rem 0 1.8rem}
+  .embed{width:min(420px,90vw)}
+  .embed iframe{border-radius:14px;border:1px solid var(--red-dim)}
+
+  /* ---------- DISCOGRAPHY ---------- */
+  .disco{width:100%;border-collapse:collapse;font-size:clamp(.85rem,1.7vw,1.05rem)}
+  .disco a{display:flex;justify-content:space-between;gap:1rem;padding:1.05rem .4rem;border-bottom:1px solid var(--red-dim);transition:all .2s}
+  .disco a:hover{background:rgba(150,27,30,.08);padding-left:1.2rem;color:var(--red-bright)}
+  .disco .year{opacity:.55}
+  .disco .type{opacity:.4;font-size:.8em;letter-spacing:.2em;text-transform:uppercase}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:46rem}
+  .about p{line-height:1.9;font-size:.95rem;opacity:.85}
+  .about .ar-quote{direction:rtl;font-size:1.3rem;opacity:.6;margin-top:2rem}
+
+  /* ---------- LINKS ---------- */
+  .platforms{display:flex;flex-wrap:wrap;gap:1rem}
+  .platforms a{
+    border:1px solid var(--red-dim);padding:.7rem 1.4rem;font-size:.85rem;letter-spacing:.15em;transition:all .25s;
+  }
+  .platforms a:hover{border-color:var(--red);background:var(--red);color:var(--black)}
+
+  /* ---------- CONTACT ---------- */
+  .contact p{font-size:.9rem;line-height:2;opacity:.85}
+
+  footer{padding:4rem 8vw;text-align:center;font-size:.75rem;opacity:.5;letter-spacing:.2em}
+
+  @media(min-width:760px){.about-grid{grid-template-columns:2fr 1fr}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="ar-line"><span id="type"></span><span class="cursor"></span></div>
+  <div class="name"><span class="glitch" data-t="MOUS BAHRI">MOUS BAHRI</span></div>
+  <a class="btn" href="#latest">listen</a>
+  <div class="scroll-hint">SCROLL</div>
+</header>
+
+<div class="marquee"><span>
+  DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
+  DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
+</span></div>
+
+<!-- LATEST -->
+<section id="latest">
+  <h2>Latest Release</h2>
+  <div class="latest">
+    <div class="latest-info">
+      <div class="rel-title">DOURI FEENA<span class="ar">دوري فينا</span></div>
+      <p>The new single. Written, composed and produced by Mous Bahri. Oriental electronics for bodies in motion. Out now on all platforms.</p>
+      <a class="btn" href="https://open.spotify.com/album/1RCD6O63Ko6u2VGngI029l" target="_blank" rel="noopener">stream now</a>
+    </div>
+    <div class="embed">
+      <iframe src="https://open.spotify.com/embed/album/1RCD6O63Ko6u2VGngI029l?theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Douri Feena on Spotify"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOGRAPHY -->
+<section id="music">
+  <h2>Discography</h2>
+  <div class="disco">
+    <a href="https://open.spotify.com/album/1RCD6O63Ko6u2VGngI029l" target="_blank" rel="noopener"><span>Douri Feena</span><span class="type">single</span><span class="year">2026</span></a>
+    <a href="https://open.spotify.com/album/5mswjPyKTdWHsiXhBW6XM9" target="_blank" rel="noopener"><span>Ya Beik</span><span class="type">single</span><span class="year">2025</span></a>
+    <a href="https://open.spotify.com/album/7uxNaR7g6xNqM8fMQHMhqY" target="_blank" rel="noopener"><span>Battalna</span><span class="type">single</span><span class="year">2025</span></a>
+    <a href="https://open.spotify.com/album/0PZtf2JNbBOZqSY1uh2it5" target="_blank" rel="noopener"><span>Tayyara</span><span class="type">single</span><span class="year">2024</span></a>
+    <a href="https://open.spotify.com/album/6K8fWXzGo1kfL308ZloJhJ" target="_blank" rel="noopener"><span>Wa7é aw Wa7ésh</span><span class="type">single</span><span class="year">2024</span></a>
+    <a href="https://open.spotify.com/album/1AaAT708swXYHKyErgQYBL" target="_blank" rel="noopener"><span>MB2023 (The Tetralogy)</span><span class="type">ep</span><span class="year">2023</span></a>
+    <a href="https://open.spotify.com/album/2fepqWcjSTEnJQdaBCboPt" target="_blank" rel="noopener"><span>Ana Weyyak</span><span class="type">single</span><span class="year">2023</span></a>
+    <a href="https://open.spotify.com/album/6w28tpnOV5FEczTpnovpT5" target="_blank" rel="noopener"><span>Albé Yde2ellak</span><span class="type">single</span><span class="year">2023</span></a>
+    <a href="https://open.spotify.com/album/0UB5MMjKIEZcZnd6BbClNm" target="_blank" rel="noopener"><span>Huwa</span><span class="type">album</span><span class="year">2022</span></a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>About</h2>
+  <div class="about-grid">
+    <div>
+      <p>Mous Bahri is a Lebanese indie queer contemporary singer, born in Beirut, based in Paris. All-round artist: he writes, composes, produces his songs, and creates and performs his own shows. His music bridges both shores of the Mediterranean, between Oriental, Pop and Avant-garde Electronic. A genre of his own.</p>
+      <p style="margin-top:1.2rem">Member of the agency of artists in exile, Paris. Releases via Coast Cove Records.</p>
+      <div class="ar-quote">الموسيقى ماذا بها؟</div>
+    </div>
+    <div class="contact">
+      <p>booking / press<br/><a href="https://linktr.ee/mousbahri" target="_blank" rel="noopener">[ contact via linktree ]</a><br/><a href="https://aa-e.org/en/artiste/moustafa-bahri/" target="_blank" rel="noopener">[ aa-e.org profile ]</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section id="listen">
+  <h2>Everywhere</h2>
+  <div class="platforms">
+    <a href="https://open.spotify.com/artist/4ldLwo9ZUuI6DxmmSuGg1U" target="_blank" rel="noopener">SPOTIFY</a>
+    <a href="https://music.apple.com/fr/artist/mous-bahri/1471189161" target="_blank" rel="noopener">APPLE MUSIC</a>
+    <a href="https://play.anghami.com/artist/4867210" target="_blank" rel="noopener">ANGHAMI</a>
+    <a href="https://www.youtube.com/c/MousBahri" target="_blank" rel="noopener">YOUTUBE</a>
+    <a href="https://mousbahri.bandcamp.com" target="_blank" rel="noopener">BANDCAMP</a>
+    <a href="https://soundcloud.com/user-459890580" target="_blank" rel="noopener">SOUNDCLOUD</a>
+    <a href="https://twitter.com/MousBahri" target="_blank" rel="noopener">X</a>
+    <a href="https://www.facebook.com/bahrimous" target="_blank" rel="noopener">FACEBOOK</a>
+    <a href="https://linktr.ee/mousbahri" target="_blank" rel="noopener">ALL LINKS +</a>
+  </div>
+</section>
+
+<footer>© Mous Bahri · All rights reserved</footer>
+
+<script>
+  // typewriter loop, same spirit as v1
+  const phrases=["الموسيقى ماذا بها؟","دوري فينا","يا بيك","بطّلنا","موس بحري"];
+  const el=document.getElementById('type');
+  let p=0,i=0,del=false;
+  function tick(){
+    const t=phrases[p];
+    el.textContent=t.slice(0,i);
+    if(!del){ i++; if(i>t.length){del=true;return setTimeout(tick,2200);} }
+    else{ i--; if(i===0){del=false;p=(p+1)%phrases.length;} }
+    setTimeout(tick,del?45:110);
+  }
+  tick();
+</script>
+</body>
+</html>

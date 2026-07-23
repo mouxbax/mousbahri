@@ -80,9 +80,9 @@
 </script>
 <style>
   :root{
-    --red:#961B1E;
-    --red-bright:#c42328;
-    --red-dim:rgba(150,27,30,.35);
+    --red:#B52328;
+    --red-bright:#DA2F35;
+    --red-dim:rgba(181,35,40,.4);
     --black:#000;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -98,7 +98,7 @@
   /* scanlines + noise */
   body::before{
     content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
-    background:repeating-linear-gradient(0deg,rgba(150,27,30,.03) 0 1px,transparent 1px 3px);
+    background:repeating-linear-gradient(0deg,rgba(181,35,40,.03) 0 1px,transparent 1px 3px);
   }
   .noise{
     position:fixed;inset:0;pointer-events:none;z-index:49;opacity:.05;
@@ -165,7 +165,7 @@
   /* ---------- DISCOGRAPHY ---------- */
   .disco{width:100%;border-collapse:collapse;font-size:clamp(.85rem,1.7vw,1.05rem)}
   .disco a{display:flex;justify-content:space-between;gap:1rem;padding:1.05rem .4rem;border-bottom:1px solid var(--red-dim);transition:all .2s}
-  .disco a:hover{background:rgba(150,27,30,.08);padding-left:1.2rem;color:var(--red-bright)}
+  .disco a:hover{background:rgba(181,35,40,.08);padding-left:1.2rem;color:var(--red-bright)}
   .disco .year{opacity:.55}
   .disco .type{opacity:.4;font-size:.8em;letter-spacing:.2em;text-transform:uppercase}
 

@@ -184,6 +184,16 @@
   /* ---------- CONTACT ---------- */
   .contact p{font-size:.9rem;line-height:2;opacity:.85}
 
+  /* ---------- COUNTDOWN ---------- */
+  .next-wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.6rem}
+  .next-wrap .rel-title{font-size:clamp(1.8rem,4vw,2.8rem)}
+  .next-wrap .rel-title .ar{display:block;direction:rtl;font-size:.55em;opacity:.8;margin-top:.3rem;letter-spacing:0}
+  .track-num{font-size:.85rem;letter-spacing:.4em;opacity:.6}
+  .countdown{display:flex;gap:clamp(1rem,4vw,3rem);justify-content:center}
+  .countdown div{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+  .countdown span{font-size:clamp(2rem,6vw,4rem);border:1px solid var(--red-dim);padding:.4rem .8rem;min-width:2.2ch;text-align:center}
+  .countdown label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.5}
+
   /* ---------- FAQ ---------- */
   .faq{max-width:46rem}
   .faq details{border-bottom:1px solid var(--red-dim);padding:1rem .2rem}
@@ -209,9 +219,25 @@
 </header>
 
 <div class="marquee"><span>
-  DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
-  DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
+  HABIBI TARAKNI 26.08 · DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
+  HABIBI TARAKNI 26.08 · DOURI FEENA · YA BEIK · BATTALNA · WA7É AW WA7ÉSH · TAYYARA · MA TENHAR · MB2023 · ANA WEYYAK · ALBÉ YDE2ELLAK · SAYYIDI · HUWA ·&nbsp;
 </span></div>
+
+<!-- NEXT RELEASE -->
+<section id="next">
+  <h2>Next Release</h2>
+  <div class="next-wrap">
+    <div class="rel-title">HABIBI TARAKNI<span class="ar">حبيبي تركني</span></div>
+    <p class="track-num">TRACK 004 · 26.08.2026</p>
+    <div class="countdown" id="countdown">
+      <div><span id="cd-d">--</span><label>days</label></div>
+      <div><span id="cd-h">--</span><label>hours</label></div>
+      <div><span id="cd-m">--</span><label>min</label></div>
+      <div><span id="cd-s">--</span><label>sec</label></div>
+    </div>
+    <a class="btn" id="presave-btn" href="https://open.spotify.com/artist/4ldLwo9ZUuI6DxmmSuGg1U" target="_blank" rel="noopener">follow on spotify</a>
+  </div>
+</section>
 
 <!-- LATEST -->
 <section id="latest">
@@ -300,7 +326,25 @@
 
 <script>
   // typewriter loop, same spirit as v1
-  const phrases=["الموسيقى ماذا بها؟","دوري فينا","يا بيك","بطّلنا","موس بحري"];
+  const phrases=["الموسيقى ماذا بها؟","حبيبي تركني","دوري فينا","يا بيك","بطّلنا","موس بحري"];
+
+  // countdown to Habibi Tarakni release (26 Aug 2026, midnight Paris)
+  const target=new Date("2026-08-26T00:00:00+02:00").getTime();
+  function pad(n){return String(n).padStart(2,"0")}
+  function cd(){
+    const diff=target-Date.now();
+    if(diff<=0){
+      document.getElementById("countdown").innerHTML='<div><span style="font-size:clamp(1.4rem,4vw,2.4rem)">OUT NOW</span></div>';
+      document.getElementById("presave-btn").textContent="listen now";
+      return;
+    }
+    document.getElementById("cd-d").textContent=pad(Math.floor(diff/86400000));
+    document.getElementById("cd-h").textContent=pad(Math.floor(diff/3600000)%24);
+    document.getElementById("cd-m").textContent=pad(Math.floor(diff/60000)%60);
+    document.getElementById("cd-s").textContent=pad(Math.floor(diff/1000)%60);
+    setTimeout(cd,1000);
+  }
+  cd();
   const el=document.getElementById('type');
   let p=0,i=0,del=false;
   function tick(){
